@@ -1,0 +1,45 @@
+# ---------------------------------------------------------------
+# THIS FILE IS CONTROLLED BY CHEF
+# Generated for Node <%= node['fqdn'] %>
+# Any manual edits will be overwritten.
+# ---------------------------------------------------------------
+
+<%# Setup the logging  %>
+<% if node['ntp']['drift_log_enabled'] || node['ntp']['log_enabled'] -%>
+<%  -%># LOG FILES
+<% end -%>
+
+<% if node['ntp']['drift_log_enabled'] -%>
+<%  -%>driftfile <%= node['ntp']['drift_log_location'] -%>
+<% end -%>
+
+<% if node['ntp']['log_enabled'] -%>
+<%  -%>logfile <%= node['ntp']['log_location'] -%>
+<% end -%>
+
+
+# RESTRICT THIS SERVICE
+restrict<% if node['ntp']['ac_default'] -%> default<% end -%><% if node['ntp']['ac_ignore'] -%> ignore<% end -%><% if node['ntp']['ac_kod'] -%> kod<% end -%><% if node['ntp']['ac_limited'] -%> limited<% end -%><% if node['ntp']['ac_nomodify'] -%> nomodify<% end -%><% if node['ntp']['ac_nopeer'] -%> nopeer<% end -%><% if node['ntp']['ac_noquery'] -%> noquery<% end -%><% if node['ntp']['ac_noserve'] -%> noserve<% end -%><% if node['ntp']['ac_notrap'] -%> notrap<% end -%><% if node['ntp']['ac_notrust'] -%> notrust<% end -%><% if node['ntp']['ac_noversion'] -%> noversion<% end -%>
+
+<% if node['ntp']['ac_limited'] -%>
+<%  -%>discard average <%= node['ntp']['ac_discard_avg'] -%> minimum <%= node['ntp']['ac_discard_min'] -%>
+<% end -%>
+
+<% if node['ntp']['ac_loopback_only'] -%>
+<%  -%># RESTRICT TO LOOPBACK
+<%  -%>restrict 127.0.0.1
+<%  -%>restrict ::1
+<% end -%>
+
+# SERVERS
+<% node['ntp']['mode_servers'].each do |server| -%>
+<%  -%><% if node['ntp']['mode_server_enabled'] -%>server<% end -%><% if node['ntp']['mode_pool_enabled'] -%>pool<% end -%><% if node['ntp']['mode_peer_enabled'] -%>peer<% end -%> <%= server %><% if node['ntp']['mode_burst'] -%> burst<% end -%><% if node['ntp']['mode_iburst'] -%> iburst<% end -%>
+<% end -%>
+
+
+<%# If the undisciplined attribute is true then insert the settings. %>
+<% if node['ntp']['use_cmos'] -%>
+<%  -%># Undisciplined Local Clock
+<%  -%>server  127.127.1.0 
+<%  -%>fudge   127.127.1.0 stratum 10
+<% end -%>

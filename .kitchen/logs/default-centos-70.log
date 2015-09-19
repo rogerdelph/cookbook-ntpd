@@ -1,0 +1,40 @@
+I, [2015-09-18T19:28:42.066047 #25332]  INFO -- default-centos-70: -----> Converging <default-centos-70>...
+I, [2015-09-18T19:28:42.066768 #25332]  INFO -- default-centos-70: Preparing files for transfer
+I, [2015-09-18T19:28:42.066864 #25332]  INFO -- default-centos-70: Preparing dna.json
+I, [2015-09-18T19:28:42.067461 #25332]  INFO -- default-centos-70: Preparing current project directory as a cookbook
+I, [2015-09-18T19:28:42.073347 #25332]  INFO -- default-centos-70: Removing non-cookbook files before transfer
+I, [2015-09-18T19:28:42.076757 #25332]  INFO -- default-centos-70: Preparing solo.rb
+I, [2015-09-18T19:28:42.222766 #25332]  INFO -- default-centos-70: -----> Chef Omnibus installation detected (install only if missing)
+I, [2015-09-18T19:28:42.252799 #25332]  INFO -- default-centos-70: Transferring files to <default-centos-70>
+I, [2015-09-18T19:28:43.377402 #25332]  INFO -- default-centos-70: Starting Chef Client, version 12.4.1
+I, [2015-09-18T19:28:44.250340 #25332]  INFO -- default-centos-70: Compiling Cookbooks...
+I, [2015-09-18T19:28:44.250407 #25332]  INFO -- default-centos-70: Converging 4 resources
+I, [2015-09-18T19:28:44.250432 #25332]  INFO -- default-centos-70: Recipe: ntpd::default
+I, [2015-09-18T19:28:45.761132 #25332]  INFO -- default-centos-70:  (up to date)
+I, [2015-09-18T19:28:46.069006 #25332]  INFO -- default-centos-70:  (up to date)
+I, [2015-09-18T19:28:46.373088 #25332]  INFO -- default-centos-70:  (up to date)
+I, [2015-09-18T19:28:46.373154 #25332]  INFO -- default-centos-70:   * yum_package[ntpdate] action install (up to date)
+I, [2015-09-18T19:28:46.374526 #25332]  INFO -- default-centos-70: 
+I, [2015-09-18T19:28:46.374576 #25332]  INFO -- default-centos-70:     - update content in file /etc/ntp.conf from 722b7e to 9dd8a2
+I, [2015-09-18T19:28:46.374602 #25332]  INFO -- default-centos-70:     --- /etc/ntp.conf	2015-09-19 02:28:25.504868885 +0000
+I, [2015-09-18T19:28:46.374625 #25332]  INFO -- default-centos-70:     +++ /tmp/chef-rendered-template20150919-14908-1w7vl9r	2015-09-19 02:28:46.266048590 +0000
+I, [2015-09-18T19:28:46.374690 #25332]  INFO -- default-centos-70:     @@ -10,9 +10,9 @@
+I, [2015-09-18T19:28:46.374712 #25332]  INFO -- default-centos-70:      logfile /var/lib/ntp/ntp.log
+I, [2015-09-18T19:28:46.374733 #25332]  INFO -- default-centos-70:      
+I, [2015-09-18T19:28:46.374754 #25332]  INFO -- default-centos-70:      # RESTRICT THIS SERVICE
+I, [2015-09-18T19:28:46.374776 #25332]  INFO -- default-centos-70:     -restrict default ignore kod nomodify noquery notrap
+I, [2015-09-18T19:28:46.374797 #25332]  INFO -- default-centos-70:     +restrict default kod limited nomodify noquery notrap
+I, [2015-09-18T19:28:46.374819 #25332]  INFO -- default-centos-70:      
+I, [2015-09-18T19:28:46.374839 #25332]  INFO -- default-centos-70:     -
+I, [2015-09-18T19:28:46.374860 #25332]  INFO -- default-centos-70:     +discard average 5 minimum 2
+I, [2015-09-18T19:28:46.374881 #25332]  INFO -- default-centos-70:      # RESTRICT TO LOOPBACK
+I, [2015-09-18T19:28:46.374902 #25332]  INFO -- default-centos-70:      restrict 127.0.0.1
+I, [2015-09-18T19:28:46.416137 #25332]  INFO -- default-centos-70: 
+I, [2015-09-18T19:28:46.416228 #25332]  INFO -- default-centos-70:     - restore selinux security context
+I, [2015-09-18T19:28:46.778554 #25332]  INFO -- default-centos-70: 
+I, [2015-09-18T19:28:46.778622 #25332]  INFO -- default-centos-70:     - restart service service[ntpd]
+I, [2015-09-18T19:28:46.778646 #25332]  INFO -- default-centos-70: 
+I, [2015-09-18T19:28:46.778667 #25332]  INFO -- default-centos-70: Running handlers:
+I, [2015-09-18T19:28:46.778689 #25332]  INFO -- default-centos-70: Running handlers complete
+I, [2015-09-18T19:28:46.778711 #25332]  INFO -- default-centos-70: Chef Client finished, 2/6 resources updated in 3.396306597 seconds
+I, [2015-09-18T19:28:46.937339 #25332]  INFO -- default-centos-70: Finished converging <default-centos-70> (0m4.87s).

@@ -1,0 +1,6 @@
+---
+hostname: 127.0.0.1
+port: '2222'
+username: vagrant
+ssh_key: "/Users/rdelph/Tresorit/Work_Documents/chef-repo/cookbooks/ntpd/.kitchen/kitchen-vagrant/kitchen-ntpd-default-centos-70/.vagrant/machines/default/virtualbox/private_key"
+last_action: converge
