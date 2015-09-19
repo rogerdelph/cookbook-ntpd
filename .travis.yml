@@ -8,4 +8,4 @@ bundler_args: --without integration development
 before_script:
   - bundle exec berks
 script:
-  - bundle exec foodcritic 
+  - bundle exec foodcritic -f any .
