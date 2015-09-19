@@ -14,5 +14,6 @@ gem 'berkshelf'
 #   gem "vagrant-omnibus", github: "schisamo/vagrant-omnibus"
 # end
 
-gem "test-kitchen"
-gem "kitchen-vagrant"
+gem 'test-kitchen', '~> 1.2'
+gem 'kitchen-vagrant', '~> 0.11'
+gem 'foodcritic',       '~> 4.0', '>= 4.0.0'
