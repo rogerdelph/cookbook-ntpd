@@ -1,11 +1,11 @@
 language: ruby
-bundler_args: --without development
-script: "bundle exec rake build"
+cache: bundler
+
 rvm:
   - 2.0.0
-gemfile:
-  - Gemfile
-branches:
-  only:
-    - master
-    - develop
+
+bundler_args: --without integration development
+before_script:
+  - bundle exec berks
+script:
+  - bundle exec foodcritic -f any
