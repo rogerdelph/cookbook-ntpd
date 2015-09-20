@@ -9,3 +9,4 @@ before_script:
   - bundle exec berks
 script:
   - bundle exec foodcritic -f any .
+  - bundle exec rubocop

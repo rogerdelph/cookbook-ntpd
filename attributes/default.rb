@@ -1,5 +1,4 @@
 
-# descriptions are partially taken from the man page.
 
 # LOGGING OPTIONS
 # ------------------------------------------------------------------------
@@ -8,15 +7,14 @@
 default['ntp']['drift_log_enabled'] = true
 default['ntp']['drift_log_location'] = '/var/lib/ntp/ntp.drift'
 
-# To seperate out the ntp log file from the default syslog set the 
+# To seperate out the ntp log file from the default syslog set the
 # attributes below
 default['ntp']['log_enabled'] = true
 default['ntp']['log_location'] = '/var/lib/ntp/ntp.log'
 
-
 # ACCESS CONTROLS
 # ------------------------------------------------------------------------
-# The following attributes will toggle various items for the 'restrict' 
+# The following attributes will toggle various items for the 'restrict'
 # configs
 
 # Prevents free access to the server
@@ -38,10 +36,10 @@ default['ntp']['ac_discard_min'] = 2
 # server.
 default['ntp']['ac_nomodify'] = true
 
-# Deny packets that would create a new association 
+# Deny packets that would create a new association
 default['ntp']['nopeer'] = true
 
-# Deny ntpq and ntpdc queries 
+# Deny ntpq and ntpdc queries
 default['ntp']['ac_noquery'] = true
 
 # Deny all packets except from ntpq and ntpdc
@@ -51,7 +49,7 @@ default['ntp']['ac_noserve'] = false
 default['ntp']['ac_notrap'] = true
 
 # Deny service unless the packet is cryptographically authenticated
-default['ntp']['ac_notrust'] = false 
+default['ntp']['ac_notrust'] = false
 
 # Deny packets that do not match the current NTP version
 default['ntp']['ac_version'] = false
@@ -59,10 +57,9 @@ default['ntp']['ac_version'] = false
 # Restrict access to loopback addresses only
 default['ntp']['ac_loopback_only'] = true
 
-
 # MODES
 # ------------------------------------------------------------------------
-# There are multiple ways to configure how ntp will sync time, please 
+# There are multiple ways to configure how ntp will sync time, please
 # ensure that only one option is enabled
 
 # Server mode creates persistant association with the specified server.
@@ -79,16 +76,20 @@ default['ntp']['mode_peer_enabled'] = false
 
 # What Servers do you want to use for the modes above
 # NOTE: If you prefer one of the servers enter prefer after the address.
-default['ntp']['mode_servers'] = ['0.pool.ntp.org','1.pool.ntp.org','2.pool.ntp.org','3.pool.ntp.org']
+default['ntp']['mode_servers'] = [
+  '0.pool.ntp.org',
+  '1.pool.ntp.org',
+  '2.pool.ntp.org',
+  '3.pool.ntp.org'
+]
 
 # burst will send eight packets instead of one when the server is
-# reachable 
+# reachable
 default['ntp']['mode_burst'] = false
 
 # iburst will send eight packets instead of one when the server is not
 # reachable
 default['ntp']['mode_iburst'] = true
-
 
 # UNDISCIPLINED CLOCK
 # ------------------------------------------------------------------------
