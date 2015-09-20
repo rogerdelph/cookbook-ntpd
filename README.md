@@ -1,5 +1,6 @@
 ntpd
 ====
+[![Cookbook Version](https://img.shields.io/cookbook/v/ntpd.svg)](https://supermarket.chef.io/cookbooks/ntpd)
 [![Build Status](https://travis-ci.org/rogerdelph/cookbook-ntpd.svg?branch=master)](https://travis-ci.org/rogerdelph/cookbook-ntpd)
 
 This cookbook installs and configures the ntpd service to syncronize the clock against network servers.  The configuration can be change to also configure the system as a peer for other computers to syncronize their clocks. 
