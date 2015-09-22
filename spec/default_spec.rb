@@ -4,6 +4,7 @@
 #
 
 require 'spec_helper'
+require 'chefspec'
 
 describe 'ntpd::default' do
   let :chef_run do
