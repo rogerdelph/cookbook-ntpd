@@ -13,5 +13,4 @@ describe 'ntpd::default' do
       expect(chef_run).to install_yum_package('ntp')
     end
   end
-
 end
