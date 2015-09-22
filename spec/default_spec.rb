@@ -6,11 +6,11 @@
 require 'spec_helper'
 
 describe 'ntpd::default' do
-  describe 'ntp::default' do
-    let(:chef_run) { ChefSpec::SoloRunner.new.converge('ntp::default') }
+  let :chef_run do
+    ChefSpec::Runner.new(platform: 'centos', version: '7.0').converge described_recipe
+  end
 
     it 'installs the ntp package' do
       expect(chef_run).to install_yum_package('ntp')
     end
-  end
 end
