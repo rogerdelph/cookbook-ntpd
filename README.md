@@ -10,7 +10,7 @@ Requirements
 
 Chef 0.10.10+ and Ohai 6.10+ for `platform_family` use.
 
-## platforms:
+## Platforms:
 
 The following platforms and versions are tested and supported using [test-kitchen](http://kitchen.ci/)
 
