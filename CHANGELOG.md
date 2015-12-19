@@ -14,3 +14,10 @@ This file is used to list changes made in each version of the ntpd cookbook.
 0.2.0
 -----
 - RD - Added Unit Tests
+
+0.2.1
+-----
+- RD - Updated Dependencies 
+     - Added Dependencies badge to README
+     
+     
